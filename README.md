@@ -6,7 +6,7 @@ Easily convert between camelCase, PascalCase, kebab-case, snake_case, SCREAMING_
 #How to use
 
     use CaseHelper\CaseHelperFactory;
-    
+
     $ch = CaseHelperFactory::make(CaseHelperFactory::INPUT_TYPE_CAMEL_CASE);
 
     $ch->toPascalCase('myStr');
@@ -26,6 +26,17 @@ You need to specify which type your input has when calling the factories' make()
 #Tests
 
 This project was mainly (although not completely) written using TDD. Tests can be run using phpunit.
+
+#Twig
+
+If you want to use this library with Twig, you can load the Twig extension with the following code:
+
+```php
+/**
+* \Twig_Environment $twig
+*/
+$twig->addExtension(new CaseHelper\Twig\Extension\CaseExtension());
+```
 
 #Contributing
 
