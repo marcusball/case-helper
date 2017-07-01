@@ -10,5 +10,8 @@
     "require-dev": {
         "phpunit/phpunit": "4.4.0"
     },
-    "license": "MIT"
+    "license": "MIT",
+    "require": {
+        "symfony/polyfill-mbstring": "^1.4"
+    }
 }

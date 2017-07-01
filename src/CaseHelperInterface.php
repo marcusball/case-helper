@@ -9,6 +9,13 @@ namespace CaseHelper;
 interface CaseHelperInterface {
 
     /**
+     * This library supports multibyte, thus encoding should be provided.
+     *
+     * @param string $encoding
+     */
+    public function __construct($encoding);
+
+    /**
      * Converts the specified string to space case.
      *
      * @param string $str

@@ -6,12 +6,12 @@ namespace CaseHelper;
 /**
  * Converts camelCase strings to other formats.
  */
-class CamelCaseHelper implements CaseHelperInterface {
+class CamelCaseHelper extends AbstractCaseHelper {
 
-    private $separatorPattern = '/((?<=[^$])[A-Z0-9])/';
+    private $separatorPattern = '/((?<=[^$])[A-Z0-9])/u';
 
     public function toSpaceCase($str) {
-        return strtolower(preg_replace($this->separatorPattern, ' $1', $str));
+        return mb_strtolower(preg_replace($this->separatorPattern, ' $1', $str), $this->encoding);
     }
 
     public function toCamelCase($str) {
@@ -19,22 +19,22 @@ class CamelCaseHelper implements CaseHelperInterface {
     }
 
     public function toPascalCase($str) {
-        return ucfirst($str);
+        return $this->mb_ucfirst($str, $this->encoding);
     }
 
     public function toKebabCase($str) {
-        return strtolower($this->toTrainCase($str));
+        return mb_strtolower($this->toTrainCase($str), $this->encoding);
     }
 
     public function toTrainCase($str) {
-        return ucfirst(preg_replace($this->separatorPattern, '-$1', $str));
+        return $this->mb_ucfirst(preg_replace($this->separatorPattern, '-$1', $str), $this->encoding);
     }
 
     public function toSnakeCase($str) {
-        return strtolower(preg_replace($this->separatorPattern, '_$1', $str));
+        return mb_strtolower(preg_replace($this->separatorPattern, '_$1', $str), $this->encoding);
     }
 
     public function toScreamingSnakeCase($str) {
-        return strtoupper($this->toSnakeCase($str));
+        return mb_strtoupper($this->toSnakeCase($str), $this->encoding);
     }
 }

@@ -21,7 +21,10 @@ class PascalCaseInputTest extends TestCase {
             'PascalCasedWord' => 'PascalCasedWord',
             'AnotherOne' => 'AnotherOne',
             'IThinkSo' => 'IThinkSo',
-            '12Test12' => '12Test12'
+            '12Test12' => '12Test12',
+            'DontL👀kAtMeLikeThat' => 'DontL👀kAtMeLikeThat',
+            'My🍕IsGood' => 'My🍕IsGood',
+            "Friday🍺sForever" => 'Friday🍺sForever'
         ));
     }
 
@@ -31,7 +34,10 @@ class PascalCaseInputTest extends TestCase {
             'IAmSoPascalCased' => 'i am so pascal cased',
             'LookAtMe' => 'look at me',
             'EverythingIsAlright' => 'everything is alright',
-            '1CheckThisOut2' => '1 check this out 2'
+            '1CheckThisOut2' => '1 check this out 2',
+            'DontL👀kAtMeLikeThat' => 'dont l👀k at me like that',
+            'My🍕IsGood' => 'my🍕 is good',
+            "Friday🍺sForever" => 'friday🍺s forever'
         ));
     }
 
@@ -40,7 +46,10 @@ class PascalCaseInputTest extends TestCase {
         $this->assertCaseHelperConvertsCasesCorrectly('toCamelCase', array(
             'MyStuffIsGood' => 'myStuffIsGood',
             'ILikeThisALot' => 'iLikeThisALot',
-            '123Meow456' => '123Meow456'
+            '123Meow456' => '123Meow456',
+            'DontL👀kAtMeLikeThat' => 'dontL👀kAtMeLikeThat',
+            'My🍕IsGood' => 'my🍕IsGood',
+            "Friday🍺sForever" => 'friday🍺sForever'
         ));
     }
 
@@ -49,7 +58,10 @@ class PascalCaseInputTest extends TestCase {
         $this->assertCaseHelperConvertsCasesCorrectly('toKebabCase', array(
             'MyPascalInput' => 'my-pascal-input',
             'SomethingOtherAlright' => 'something-other-alright',
-            'yup123' => 'yup-1-2-3'
+            'yup123' => 'yup-1-2-3',
+            'DontL👀kAtMeLikeThat' => 'dont-l👀k-at-me-like-that',
+            'My🍕IsGood' => 'my🍕-is-good',
+            "Friday🍺sForever" => 'friday🍺s-forever'
         ));
     }
 
@@ -58,7 +70,10 @@ class PascalCaseInputTest extends TestCase {
         $this->assertCaseHelperConvertsCasesCorrectly('toTrainCase', array(
             'YopOkay' => 'Yop-Okay',
             'LetsTryThisOne' => 'Lets-Try-This-One',
-            '234Okay' => '2-3-4-Okay'
+            '234Okay' => '2-3-4-Okay',
+            'DontL👀kAtMeLikeThat' => 'Dont-L👀k-At-Me-Like-That',
+            'My🍕IsGood' => 'My🍕-Is-Good',
+            "Friday🍺sForever" => 'Friday🍺s-Forever'
         ));
     }
 
@@ -66,7 +81,10 @@ class PascalCaseInputTest extends TestCase {
 
         $this->assertCaseHelperConvertsCasesCorrectly('toSnakeCase', array(
             'ASneakySnake' => 'A_Sneaky_Snake',
-            'WowThatsAwesome' => 'Wow_Thats_Awesome'
+            'WowThatsAwesome' => 'Wow_Thats_Awesome',
+            'DontL👀kAtMeLikeThat' => 'Dont_L👀k_At_Me_Like_That',
+            'My🍕IsGood' => 'My🍕_Is_Good',
+            "Friday🍺sForever" => 'Friday🍺s_Forever'
         ));
     }
 
@@ -74,7 +92,10 @@ class PascalCaseInputTest extends TestCase {
         $this->assertCaseHelperConvertsCasesCorrectly('toScreamingSnakeCase', array(
             'SupernaturalAndParanormal' => 'SUPERNATURAL_AND_PARANORMAL',
             'TestAllTheThings' => 'TEST_ALL_THE_THINGS',
-            '4TestWithNumbers3' => '4_TEST_WITH_NUMBERS_3'
+            '4TestWithNumbers3' => '4_TEST_WITH_NUMBERS_3',
+            'DontL👀kAtMeLikeThat' => 'DONT_L👀K_AT_ME_LIKE_THAT',
+            'My🍕IsGood' => 'MY🍕_IS_GOOD',
+            "Friday🍺sForever" => 'FRIDAY🍺S_FOREVER'
         ));
     }
 }

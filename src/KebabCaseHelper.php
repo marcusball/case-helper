@@ -6,9 +6,9 @@ namespace CaseHelper;
 /**
  * Converts kabab-case strings to other formats.
  */
-class KebabCaseHelper implements CaseHelperInterface {
+class KebabCaseHelper extends AbstractCaseHelper {
 
-    private $separatorPattern = '/-([A-Za-z0-9])/';
+    private $separatorPattern = '/-(.)/u';
 
     public function toSpaceCase($str) {
         return preg_replace_callback($this->separatorPattern, function($el) {
@@ -17,9 +17,9 @@ class KebabCaseHelper implements CaseHelperInterface {
     }
 
     public function toCamelCase($str) {
-        return preg_replace_callback($this->separatorPattern, function($el) {
-            return strtoupper($el[1]);
-        }, $str);
+        return $this->mb_lcfirst(preg_replace_callback($this->separatorPattern, function($el) {
+            return mb_strtoupper($el[1], $this->encoding);
+        }, $str), $this->encoding);
     }
 
     public function toKebabCase($str) {
@@ -27,11 +27,11 @@ class KebabCaseHelper implements CaseHelperInterface {
     }
 
     public function toPascalCase($str) {
-        return ucfirst($this->toCamelCase($str));
+        return $this->mb_ucfirst($this->toCamelCase($str), $this->encoding);
     }
 
     public function toScreamingSnakeCase($str) {
-        return strtoupper($this->toSnakeCase($str));
+        return mb_strtoupper($this->toSnakeCase($str), $this->encoding);
     }
 
     public function toSnakeCase($str) {
@@ -41,8 +41,8 @@ class KebabCaseHelper implements CaseHelperInterface {
     }
 
     public function toTrainCase($str) {
-        return ucfirst(preg_replace_callback('/-([A-Za-z])/', function($el) {
-            return strtoupper($el[0]);
-        }, $str));
+        return $this->mb_ucfirst(preg_replace_callback('/-([A-Za-z])/u', function($el) {
+            return mb_strtoupper($el[0], $this->encoding);
+        }, $str), $this->encoding);
     }
 }

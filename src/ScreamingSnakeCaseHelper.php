@@ -6,26 +6,26 @@ namespace CaseHelper;
 /**
  * Converts SCREAMING_SNAKE_CASE strings to other formats.
  */
-class ScreamingSnakeCaseHelper implements CaseHelperInterface {
+class ScreamingSnakeCaseHelper extends AbstractCaseHelper {
 
     public function toSpaceCase($str) {
-        return strtolower(str_replace('_', ' ', $str));
+        return mb_strtolower(str_replace('_', ' ', $str), $this->encoding);
     }
 
     public function toCamelCase($str) {
-        return preg_replace_callback('/_[a-z0-9]/', function($el) {
-            return strtoupper(substr($el[0], 1));
-        }, strtolower($str));
+        return preg_replace_callback('/_./u', function($el) {
+            return mb_strtoupper(mb_substr($el[0], 1, parent::INT_MAX, $this->encoding), $this->encoding);
+        }, mb_strtolower($str, $this->encoding));
     }
 
     public function toKebabCase($str) {
-        return strtolower(preg_replace_callback('/_[A-Z0-9]/', function($el) {
-            return '-' . substr($el[0], 1);
-        }, $str));
+        return mb_strtolower(preg_replace_callback('/_./u', function($el) {
+            return '-' . mb_substr($el[0], 1, parent::INT_MAX, $this->encoding);
+        }, $str), $this->encoding);
     }
 
     public function toPascalCase($str) {
-        return ucfirst($this->toCamelCase($str));
+        return $this->mb_ucfirst($this->toCamelCase($str), $this->encoding);
     }
 
     public function toScreamingSnakeCase($str) {
@@ -33,13 +33,12 @@ class ScreamingSnakeCaseHelper implements CaseHelperInterface {
     }
 
     public function toSnakeCase($str) {
-        return strtolower($str);
+        return mb_strtolower($str, $this->encoding);
     }
 
     public function toTrainCase($str) {
-
-        return ucfirst(preg_replace_callback('/_[a-z0-9]/', function($el) {
-            return '-' . strtoupper(substr($el[0], 1));
-        }, strtolower($str)));
+        return $this->mb_ucfirst(preg_replace_callback('/_./u', function($el) {
+            return '-' . mb_strtoupper(mb_substr($el[0], 1, parent::INT_MAX, $this->encoding), $this->encoding);
+        }, mb_strtolower($str, $this->encoding)), $this->encoding);
     }
 }

@@ -6,34 +6,34 @@ namespace CaseHelper;
 /**
  * Converts Train-Case strings to other formats.
  */
-class TrainCaseHelper implements CaseHelperInterface {
+class TrainCaseHelper extends AbstractCaseHelper {
 
     public function toSpaceCase($str) {
-        return strtolower(str_replace('-', ' ', $str));
+        return mb_strtolower(str_replace('-', ' ', $str), $this->encoding);
     }
 
     public function toCamelCase($str) {
-        return lcfirst($this->toPascalCase($str));
+        return $this->mb_lcfirst($this->toPascalCase($str), $this->encoding);
     }
 
     public function toKebabCase($str) {
-        return strtolower($str);
+        return mb_strtolower($str, $this->encoding);
     }
 
     public function toPascalCase($str) {
-        return preg_replace_callback('/-[A-Z0-9]/', function($el) {
-            return strtoupper(substr($el[0], 1));
+        return preg_replace_callback('/-./u', function($el) {
+            return mb_strtoupper(mb_substr($el[0], 1, parent::INT_MAX, $this->encoding), $this->encoding);
         }, $str);
     }
 
     public function toScreamingSnakeCase($str) {
-        return strtoupper($this->toSnakeCase($str));
+        return mb_strtoupper($this->toSnakeCase($str), $this->encoding);
     }
 
     public function toSnakeCase($str) {
-        return strtolower(preg_replace_callback('/-[A-Z0-9]/', function($el) {
-            return '_' . substr($el[0], 1);
-        }, $str));
+        return mb_strtolower(preg_replace_callback('/-./', function($el) {
+            return '_' . mb_substr($el[0], 1, parent::INT_MAX, $this->encoding);
+        }, $str), $this->encoding);
     }
 
     public function toTrainCase($str) {
