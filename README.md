@@ -23,6 +23,10 @@ You need to specify which type your input has when calling the factories' make()
   * CaseHelperFactory::INPUT_TYPE_SCREAMING_SNAKE_CASE for `SCREAMING_SNAKE_CASE`
   * CaseHelperFactory::INPUT_TYPE_TRAIN_CASE for `Train-Case`
 
+## Twig
+
+Want to use it with Twig? Check out [this](https://github.com/ninsuo/symfony-quickstart/blob/master/src/BaseBundle/Twig/Extension/CaseExtension.php) great example.
+
 # Tests
 
 This project was mainly (although not completely) written using TDD. Tests can be run using phpunit.
