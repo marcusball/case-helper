@@ -3,7 +3,7 @@ CaseHelper
 
 Easily convert between camelCase, PascalCase, kebab-case, snake_case, SCREAMING_SNAKE_CASE, Train-Case, and string case!
 
-#How to use
+# How to use
 
     use CaseHelper\CaseHelperFactory;
     
@@ -23,10 +23,10 @@ You need to specify which type your input has when calling the factories' make()
   * CaseHelperFactory::INPUT_TYPE_SCREAMING_SNAKE_CASE for `SCREAMING_SNAKE_CASE`
   * CaseHelperFactory::INPUT_TYPE_TRAIN_CASE for `Train-Case`
 
-#Tests
+# Tests
 
 This project was mainly (although not completely) written using TDD. Tests can be run using phpunit.
 
-#Contributing
+# Contributing
 
 If you want to contribute, please follow the used standards and add or extend tests.
