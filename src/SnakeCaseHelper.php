@@ -6,30 +6,30 @@ namespace CaseHelper;
 /**
  * Converts snake_case strings to other formats.
  */
-class SnakeCaseHelper implements CaseHelperInterface {
+class SnakeCaseHelper extends AbstractCaseHelper {
 
     public function toSpaceCase($str) {
         return str_replace('_', ' ', $str);
     }
 
     public function toCamelCase($str) {
-        return preg_replace_callback('/_[a-z0-9]/', function($el) {
-            return strtoupper(substr($el[0], 1));
-        }, $str);
+        return $this->mb_lcfirst(preg_replace_callback('/_./u', function($el) {
+            return mb_strtoupper(mb_substr($el[0], 1, parent::INT_MAX, $this->encoding), $this->encoding);
+        }, $str), $this->encoding);
     }
 
     public function toKebabCase($str) {
-        return preg_replace_callback('/_[a-z0-9]/', function($el) {
-            return '-' . substr($el[0], 1);
+        return preg_replace_callback('/_./u', function($el) {
+            return '-' . mb_substr($el[0], 1, parent::INT_MAX, $this->encoding);
         }, $str);
     }
 
     public function toPascalCase($str) {
-        return ucfirst($this->toCamelCase($str));
+        return $this->mb_ucfirst($this->toCamelCase($str), $this->encoding);
     }
 
     public function toScreamingSnakeCase($str) {
-        return strtoupper($str);
+        return mb_strtoupper($str, $this->encoding);
     }
 
     public function toSnakeCase($str) {
@@ -38,8 +38,8 @@ class SnakeCaseHelper implements CaseHelperInterface {
 
     public function toTrainCase($str) {
 
-        return ucfirst(preg_replace_callback('/_[a-z0-9]/', function($el) {
-            return '-' . strtoupper(substr($el[0], 1));
-        }, $str));
+        return $this->mb_ucfirst(preg_replace_callback('/_./u', function($el) {
+            return '-' . mb_strtoupper(mb_substr($el[0], 1, parent::INT_MAX, $this->encoding), $this->encoding);
+        }, $str), $this->encoding);
     }
 }

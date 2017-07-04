@@ -19,30 +19,30 @@ class CaseHelperFactory {
     const INPUT_TYPE_SNAKE_CASE = 6;
     const INPUT_TYPE_SCREAMING_SNAKE_CASE = 7;
 
-    public static function make($inputType) {
+    public static function make($inputType, $encoding = 'UTF-8') {
         $o = null;
 
         switch ($inputType) {
             case static::INPUT_TYPE_SPACE_CASE:
-                $o = new SpaceCaseHelper();
+                $o = new SpaceCaseHelper($encoding);
                 break;
             case static::INPUT_TYPE_CAMEL_CASE:
-                $o = new CamelCaseHelper();
+                $o = new CamelCaseHelper($encoding);
                 break;
             case static::INPUT_TYPE_PASCAL_CASE:
-                $o = new PascalCaseHelper();
+                $o = new PascalCaseHelper($encoding);
                 break;
             case static::INPUT_TYPE_KEBAB_CASE:
-                $o = new KebabCaseHelper();
+                $o = new KebabCaseHelper($encoding);
                 break;
             case static::INPUT_TYPE_TRAIN_CASE:
-                $o = new TrainCaseHelper();
+                $o = new TrainCaseHelper($encoding);
                 break;
             case static::INPUT_TYPE_SNAKE_CASE;
-                $o = new SnakeCaseHelper();
+                $o = new SnakeCaseHelper($encoding);
                 break;
             case static::INPUT_TYPE_SCREAMING_SNAKE_CASE:
-                $o = new ScreamingSnakeCaseHelper();
+                $o = new ScreamingSnakeCaseHelper($encoding);
                 break;
             default:
                 throw new Exception('Unknown input case type: ' . $inputType);

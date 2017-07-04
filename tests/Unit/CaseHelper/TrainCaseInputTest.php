@@ -19,7 +19,10 @@ class TrainCaseInputTest extends TestCase {
 
         $this->assertCaseHelperConvertsCasesCorrectly('toTrainCase', array(
             'My-Train-Case-Str' => 'My-Train-Case-Str',
-            'Yup' => 'Yup'
+            'Yup' => 'Yup',
+            'Dont-L👀k-At-Me-Like-That' => 'Dont-L👀k-At-Me-Like-That',
+            'My-🍕-Is-Good' => 'My-🍕-Is-Good',
+            "Friday-🍺s-Forever" => 'Friday-🍺s-Forever'
         ));
     }
 
@@ -28,7 +31,10 @@ class TrainCaseInputTest extends TestCase {
         $this->assertCaseHelperConvertsCasesCorrectly('toSpaceCase', array(
             'I-Am-Train-Cased' => 'i am train cased',
             '2-To-Go-4' => '2 to go 4',
-            'Ok' => 'ok'
+            'Ok' => 'ok',
+            'Dont-L👀k-At-Me-Like-That' => 'dont l👀k at me like that',
+            'My-🍕-Is-Good' => 'my 🍕 is good',
+            "Friday-🍺s-Forever" => 'friday 🍺s forever'
         ));
     }
 
@@ -38,7 +44,10 @@ class TrainCaseInputTest extends TestCase {
             'Some-Train-Case-Stuff' => 'SomeTrainCaseStuff',
             'I-Dont-Know-What-To-Write' => 'IDontKnowWhatToWrite',
             '9-Whatever-9' => '9Whatever9',
-            'N8' => 'N8'
+            'N8' => 'N8',
+            'Dont-L👀k-At-Me-Like-That' => 'DontL👀kAtMeLikeThat',
+            'My-🍕-Is-Good' => 'My🍕IsGood',
+            "Friday-🍺s-Forever" => 'Friday🍺sForever'
         ));
     }
 
@@ -48,7 +57,10 @@ class TrainCaseInputTest extends TestCase {
             'Test-Me-Now-Do-It' => 'testMeNowDoIt',
             'Aww-Alright-Then' => 'awwAlrightThen',
             '1338-Is-One-Step-Ahead' => '1338IsOneStepAhead',
-            'Ending-With-Number-3' => 'endingWithNumber3'
+            'Ending-With-Number-3' => 'endingWithNumber3',
+            'Dont-L👀k-At-Me-Like-That' => 'dontL👀kAtMeLikeThat',
+            'My-🍕-Is-Good' => 'my🍕IsGood',
+            "Friday-🍺s-Forever" => 'friday🍺sForever'
         ));
     }
 
@@ -57,7 +69,10 @@ class TrainCaseInputTest extends TestCase {
         $this->assertCaseHelperConvertsCasesCorrectly('toKebabCase', array(
             'I-Like-Icecream' => 'i-like-icecream',
             'This-Is-Great' => 'this-is-great',
-            '4-Eva' => '4-eva'
+            '4-Eva' => '4-eva',
+            'Dont-L👀k-At-Me-Like-That' => 'dont-l👀k-at-me-like-that',
+            'My-🍕-Is-Good' => 'my-🍕-is-good',
+            "Friday-🍺s-Forever" => 'friday-🍺s-forever'
         ));
     }
 
@@ -67,7 +82,10 @@ class TrainCaseInputTest extends TestCase {
             'Yup-Yup-Ya' => 'yup_yup_ya',
             'I-Like' => 'i_like',
             '2-Cool-4-You' => '2_cool_4_you',
-            'Stuff-Times-3' => 'stuff_times_3'
+            'Stuff-Times-3' => 'stuff_times_3',
+            'Dont-L👀k-At-Me-Like-That' => 'dont_l👀k_at_me_like_that',
+            'My-🍕-Is-Good' => 'my_🍕_is_good',
+            "Friday-🍺s-Forever" => 'friday_🍺s_forever'
         ));
     }
 
@@ -77,7 +95,10 @@ class TrainCaseInputTest extends TestCase {
             'Yup' => 'YUP',
             'I-Like-Testing' => 'I_LIKE_TESTING',
             'Something-1337-Pls' => 'SOMETHING_1337_PLS',
-            '1-Yes-1' => '1_YES_1'
+            '1-Yes-1' => '1_YES_1',
+            'Dont-L👀k-At-Me-Like-That' => 'DONT_L👀K_AT_ME_LIKE_THAT',
+            'My-🍕-Is-Good' => 'MY_🍕_IS_GOOD',
+            "Friday-🍺s-Forever" => 'FRIDAY_🍺S_FOREVER'
         ));
     }
 }

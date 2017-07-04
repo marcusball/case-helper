@@ -6,20 +6,20 @@ namespace CaseHelper;
 /**
  * Converts PascalCase strings to other formats.
  */
-class PascalCaseHelper implements CaseHelperInterface {
+class PascalCaseHelper extends AbstractCaseHelper {
 
-    private $separatorPattern = '/((?<=[^$])[A-Z0-9])/';
+    private $separatorPattern = '/((?<=[^$])[A-Z0-9])/u';
 
     public function toSpaceCase($str) {
-        return strtolower(preg_replace($this->separatorPattern, ' $1', $str));
+        return mb_strtolower(preg_replace($this->separatorPattern, ' $1', $str), $this->encoding);
     }
 
     public function toCamelCase($str) {
-        return lcfirst($str);
+        return $this->mb_lcfirst($str, $this->encoding);
     }
 
     public function toKebabCase($str) {
-        return strtolower($this->toTrainCase($str));
+        return mb_strtolower($this->toTrainCase($str), $this->encoding);
     }
 
     public function toPascalCase($str) {
@@ -27,7 +27,7 @@ class PascalCaseHelper implements CaseHelperInterface {
     }
 
     public function toScreamingSnakeCase($str) {
-        return strtoupper($this->toSnakeCase($str));
+        return mb_strtoupper($this->toSnakeCase($str), $this->encoding);
     }
 
     public function toSnakeCase($str) {
