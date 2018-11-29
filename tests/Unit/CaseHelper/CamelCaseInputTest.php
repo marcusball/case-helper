@@ -23,7 +23,10 @@ class CamelCaseInputTest extends TestCase {
             'watEva' => 'watEva',
             'dontL👀kAtMeLikeThat' => 'dontL👀kAtMeLikeThat',
             'my🍕IsGood' => 'my🍕IsGood',
-            "friday🍺sForever" => 'friday🍺sForever'
+            "friday🍺sForever" => 'friday🍺sForever',
+            '404NotFound' => '404NotFound',
+            'test123' => 'test123',
+            'pet1000GoodBoyes🐶' => 'pet1000GoodBoyes🐶'
         ));
     }
 
@@ -35,7 +38,10 @@ class CamelCaseInputTest extends TestCase {
             'alrightThen' => 'alright then',
             'dontL👀kAtMeLikeThat' => 'dont l👀k at me like that',
             'my🍕IsGood' => 'my🍕 is good',
-            "friday🍺sForever" => 'friday🍺s forever'
+            "friday🍺sForever" => 'friday🍺s forever',
+            '404NotFound' => '404 not found',
+            'test123' => 'test 123',
+            'pet1000GoodBoyes🐶' => 'pet 1000 good boyes🐶'
         ));
     }
 
@@ -46,7 +52,10 @@ class CamelCaseInputTest extends TestCase {
             'iAmSoUnsureOfMyCase' => 'IAmSoUnsureOfMyCase',
             'dontL👀kAtMeLikeThat' => 'DontL👀kAtMeLikeThat',
             'my🍕IsGood' => 'My🍕IsGood',
-            "friday🍺sForever" => 'Friday🍺sForever'
+            "friday🍺sForever" => 'Friday🍺sForever',
+            '404NotFound' => '404NotFound',
+            'test123' => 'Test123',
+            'pet1000GoodBoyes🐶' => 'Pet1000GoodBoyes🐶'
         ));
     }
 
@@ -58,7 +67,10 @@ class CamelCaseInputTest extends TestCase {
             'kebabMe' => 'kebab-me',
             'dontL👀kAtMeLikeThat' => 'dont-l👀k-at-me-like-that',
             'my🍕IsGood' => 'my🍕-is-good',
-            "friday🍺sForever" => 'friday🍺s-forever'
+            "friday🍺sForever" => 'friday🍺s-forever',
+            '404NotFound' => '404-not-found',
+            'test123' => 'test-123',
+            'pet1000GoodBoyes🐶' => 'pet-1000-good-boyes🐶'
         ));
     }
 
@@ -67,10 +79,13 @@ class CamelCaseInputTest extends TestCase {
         $this->assertCaseHelperConvertsCasesCorrectly('toTrainCase', array(
             'someCamelStuff' => 'Some-Camel-Stuff',
             'whatchaGonnaDo?' => 'Whatcha-Gonna-Do?',
-            'iHaveNoIdeaWhatImDoing12' => 'I-Have-No-Idea-What-Im-Doing-1-2',
+            'iHaveNoIdeaWhatImDoing12' => 'I-Have-No-Idea-What-Im-Doing-12',
             'dontL👀kAtMeLikeThat' => 'Dont-L👀k-At-Me-Like-That',
             'my🍕IsGood' => 'My🍕-Is-Good',
-            "friday🍺sForever" => 'Friday🍺s-Forever'
+            "friday🍺sForever" => 'Friday🍺s-Forever',
+            '404NotFound' => '404-Not-Found',
+            'test123' => 'Test-123',
+            'pet1000GoodBoyes🐶' => 'Pet-1000-Good-Boyes🐶'
         ));
     }
 
@@ -83,7 +98,10 @@ class CamelCaseInputTest extends TestCase {
             'withNumber9' => 'with_number_9',
             'dontL👀kAtMeLikeThat' => 'dont_l👀k_at_me_like_that',
             'my🍕IsGood' => 'my🍕_is_good',
-            "friday🍺sForever" => 'friday🍺s_forever'
+            "friday🍺sForever" => 'friday🍺s_forever',
+            '404NotFound' => '404_not_found',
+            'test123' => 'test_123',
+            'pet1000GoodBoyes🐶' => 'pet_1000_good_boyes🐶'
         ));
     }
 
@@ -94,7 +112,10 @@ class CamelCaseInputTest extends TestCase {
             '4You' => '4_YOU',
             'dontL👀kAtMeLikeThat' => 'DONT_L👀K_AT_ME_LIKE_THAT',
             'my🍕IsGood' => 'MY🍕_IS_GOOD',
-            "friday🍺sForever" => 'FRIDAY🍺S_FOREVER'
+            "friday🍺sForever" => 'FRIDAY🍺S_FOREVER',
+            '404NotFound' => '404_NOT_FOUND',
+            'test123' => 'TEST_123',
+            'pet1000GoodBoyes🐶' => 'PET_1000_GOOD_BOYES🐶'
         ));
     }
 }
