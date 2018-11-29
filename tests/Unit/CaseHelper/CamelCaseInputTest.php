@@ -115,6 +115,7 @@ class CamelCaseInputTest extends TestCase {
             "friday🍺sForever" => 'FRIDAY🍺S_FOREVER',
             '404NotFound' => '404_NOT_FOUND',
             'test123' => 'TEST_123',
+            'pet1000GoodBoyes🐶' => 'PET_1000_GOOD_BOYES🐶'
         ));
     }
 }
