@@ -8,7 +8,7 @@ namespace CaseHelper;
  */
 class CamelCaseHelper extends AbstractCaseHelper {
 
-    private $separatorPattern = '/((?<=[^$])[A-Z0-9])/u';
+    private $separatorPattern = '/((?<=[^$])[A-Z]|(?<!\d|^)\d)/u';
 
     public function toSpaceCase($str) {
         return mb_strtolower(preg_replace($this->separatorPattern, ' $1', $str), $this->encoding);
