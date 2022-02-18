@@ -1,5 +1,5 @@
 {
-    "name": "nabil1337/case-helper",
+    "name": "marcusball/case-helper",
     "description": "Easily convert between camelCase, PascalCase, kebab-case, snake_case, SCREAMING_SNAKE_CASE, Train-Case, and string case!",
     "autoload": {
         "psr-4": {
