@@ -1,6 +1,6 @@
 {
     "name": "marcusball/case-helper",
-    "description": "Easily convert between camelCase, PascalCase, kebab-case, snake_case, SCREAMING_SNAKE_CASE, Train-Case, and string case!",
+    "description": "Easily convert between camelCase, PascalCase, kebab-case, snake_case, SCREAMING_SNAKE_CASE, Train-Case, and string case! Note: The original package, nabil1337/case-helper, has been abandoned and this repo has taken over ownership.",
     "autoload": {
         "psr-4": {
             "CaseHelper\\": "src/",

@@ -3,6 +3,10 @@ CaseHelper
 
 Easily convert between camelCase, PascalCase, kebab-case, snake_case, SCREAMING_SNAKE_CASE, Train-Case, and string case!
 
+# Note about fork
+
+The original package, `nabil1337/case-helper`, has been abandoned and this repo has taken over ownership.
+
 # How to use
 
     use CaseHelper\CaseHelperFactory;
